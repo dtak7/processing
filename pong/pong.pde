@@ -37,7 +37,7 @@ int speedx=5;
      rect(rectx+i*170,35,150,50);
     
      }
-      if(intersects(x,y,rectx=i*170,35,50)){
+      if(intersects(x,y,rectx=x*170,35,50)){
         speedy++; 
      }
  }
