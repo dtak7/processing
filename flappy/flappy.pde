@@ -52,11 +52,14 @@ void draw() {
     textFont(lose);
     fill(185,15,15);
     text("YOU \n LOSE",150,350);
-    stop();  }
-     if(intersects2(birdx,birdy,pipe1X,randomLength,50)){
+    println("top pipe");
+    stop(); 
+  }
+     if(intersects2(birdx,birdy,pipe1X,randomLength+200,50)){
     textFont(lose);
     fill(185,15,15);
     text("YOU \n LOSE",150,350);
+    println("bottom pipe");
     stop();  }
 }
 
@@ -75,10 +78,7 @@ boolean intersects(int birdx, int birdy, int pipe1X, int pipe1Y, int randomLengt
 
 boolean intersects2(int birdx, int birdy, int pipe2X, int pipe2Y, int randomLength) {
   if (birdy > pipe2Y - 4 && birdx >= pipe2X && birdx < pipe2X + randomLength){
-      fill(1,1,1);
-        textFont(lose);
-      text("YOU \n LOSE",150,350);
-    stop(); 
+    
     return true;
   }
   else {
