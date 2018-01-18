@@ -15,7 +15,7 @@ void setup() {
   size(700, 700);
   points=0;
    fo=createFont("Menlo.ttc",30);
-   lose=createFont("SignPainter.ttc",200);
+   lose=createFont("SignPainter.otf",200);
 }
 
 void draw() {
@@ -46,16 +46,24 @@ void draw() {
        randomLength = (int) random(100, 400);
     pipe2X=700;
     }
-  intersects(birdx,birdy,pipe1X,randomLength,50);
-  intersects2(birdx,birdy,pipe2X,randomLength+200,50);
+  //intersects(birdx,birdy,pipe1X,randomLength,50);
+//intersects2(birdx,birdy,pipe2X,randomLength+200,50);
+  if(intersects(birdx,birdy,pipe1X,randomLength,50)){
+    textFont(lose);
+    fill(185,15,15);
+    text("YOU \n LOSE",150,350);
+    stop();  }
+     if(intersects2(birdx,birdy,pipe1X,randomLength,50)){
+    textFont(lose);
+    fill(185,15,15);
+    text("YOU \n LOSE",150,350);
+    stop();  }
 }
+
 
 boolean intersects(int birdx, int birdy, int pipe1X, int pipe1Y, int randomLength) {
   if (birdy < pipe1Y  && birdx >= pipe1X && birdx < pipe1X + randomLength){
-    textFont(lose);
-    fill(1,1,1);
-    text("YOU \n LOSE",150,350);
-    stop();
+  
     
     return true;
   }
